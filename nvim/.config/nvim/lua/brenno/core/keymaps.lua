@@ -33,23 +33,29 @@ keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)", { desc = "Go to previous 
 keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)", { desc = "Go to next Yanky entry" })
 
 -- leap plugin
-keymap.set({ "n", "x", "o" }, "b", "<Plug>(leap-forward)", { desc = "Leap forward" })
-keymap.set({ "n", "x", "o" }, "B", "<Plug>(leap-backward)", { desc = "Leap backward" })
-keymap.set({ "n", "x", "o" }, "gb", "<Plug>(leap-from-window)", { desc = "Leap from window" })
+keymap.set({ "n", "x", "o" }, "t", "<Plug>(leap-forward)", { desc = "Leap forward" })
+keymap.set({ "n", "x", "o" }, "T", "<Plug>(leap-backward)", { desc = "Leap backward" })
+keymap.set({ "n", "x", "o" }, "gt", "<Plug>(leap-from-window)", { desc = "Leap from window" })
 
 -- refactoring plugin
 keymap.set({ "n", "x" }, "<leader>rr", function()
-  require("telescope").extensions.refactoring.refactors()
+  require("nvim.config.nvim.lua.brenno.plugins.telescope").extensions.refactoring.refactors()
 end, { desc = "Refactor with Telescope" })
 
-vim.keymap.set("n", "<leader>rp", function()
-  require("refactoring").debug.printf({ below = false })
+keymap.set("n", "<leader>rp", function()
+  require("nvim.config.nvim.lua.brenno.plugins.refactoring").debug.printf({
+    below = false,
+    show_success_message = false,
+  })
 end, { desc = "Print debug info for refactoring" })
 
-vim.keymap.set({ "x", "n" }, "<leader>rv", function()
-  require("refactoring").debug.print_var()
+keymap.set({ "x", "n" }, "<leader>rv", function()
+  require("nvim.config.nvim.lua.brenno.plugins.refactoring").debug.print_var({ show_success_message = false })
 end, { desc = "Print variable for refactoring" })
 
-vim.keymap.set("n", "<leader>rc", function()
-  require("refactoring").debug.cleanup({})
+keymap.set("n", "<leader>rc", function()
+  require("nvim.config.nvim.lua.brenno.plugins.refactoring").debug.cleanup({ show_success_message = false })
 end, { desc = "Cleanup debug for refactoring" })
+
+-- Github Copilot Chat
+keymap.set({ "n", "v" }, "<leader>gc", ":CopilotChat ")
