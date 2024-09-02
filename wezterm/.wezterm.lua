@@ -16,22 +16,24 @@ if wezterm.config_builder then
 end
 
 config.colors = {
-	foreground = "#CBE0F0",
-	background = "#011423",
-	cursor_bg = "#47FF9C",
-	cursor_border = "#47FF9C",
-	cursor_fg = "#011423",
-	selection_bg = "#706b4e",
-	selection_fg = "#f3d9c4",
-	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+	foreground = "#BBC3D4",
+	background = "#181616",
+	cursor_bg = "#5E81AC",
+	cursor_border = "#5E81AC",
+	cursor_fg = "#E5E9F0",
+	selection_bg = "#434C5E",
+	selection_fg = "#D8DEE9",
+	ansi = { "#191D24", "#BF616A", "#A3BE8C", "#EBCB8B", "#5E81AC", "#B48EAD", "#8FBCBB", "#D8DEE9" },
+	brights = { "#1E222A", "#C5727A", "#B1C89D", "#EFD49F", "#81A1C1", "#BE9DB8", "#9FC6C5", "#ECEFF4" },
 }
 
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.97
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 13
 config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+config.enable_wayland = true
+
+config.max_fps = 75
+config.animation_fps = 75
 
 return config
-
