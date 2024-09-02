@@ -1,0 +1,44 @@
+~/configs/nvim/.config/..
+  ✗ ★ nvim
+    after
+    ✗ ★ lua
+  │   ✗ ★ brenno
+  │     ★ archived
+  │     ✗ core
+  │     ✗ plugins
+  │   │   ✗ lsp
+  │   │ │  autopairs.lua
+  │   │ │  autotag.lua
+  │   │ │  bufferline.lua
+  │   │ │  ✗ colorscheme.lua
+  │   │ │  comment.lua
+  │   │ │  copilot-chat.lua
+  │   │ │  copilot.lua
+  │   │ │  dressing.lua
+  │   │ │  ✗ formatting.lua
+  │   │ │  gitsigns.lua
+  │   │ │  init.lua
+  │   │ │  leap.lua
+  │   │ │  ✗ linting.lua
+  │   │ │  ✗ lualine.lua
+  │   │ │  mini-indentscope.lua
+  │   │ │  mini-move.lua
+  │   │ │  neogen.lua
+  │   │ │  noice.lua
+  │   │ │  nvim-cmp.lua
+  │   │ │  nvim-tree.lua
+  │   │ │  nvim-treesitter-text-objects.lua
+  │   │ │  refactoring.lua
+  │   │ │  substitute.lua
+  │   │ │  surround.lua
+  │   │ │  telescope.lua
+  │   │ │  treesitter.lua
+  │   │ │  trouble.lua
+  │   │ │  vim-maximizer.lua
+  │   │ │  which-key.lua
+  │   │ └  yanky.lua
+  │   └  lazy.lua
+  │  .stylua.toml
+  │  init.lua
+  │  ✗ lazy-lock.json
+  └  lazyvim.json

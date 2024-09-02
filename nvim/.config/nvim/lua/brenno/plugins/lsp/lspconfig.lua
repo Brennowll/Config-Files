@@ -78,6 +78,7 @@ return {
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
+          root_dir = lspconfig.util.root_pattern(".git", "pyproject.toml", "requirements.txt", "pyrightconfig.json"),
         })
       end,
       ["graphql"] = function()
@@ -109,6 +110,12 @@ return {
               },
             },
           },
+        })
+      end,
+      ["ruff"] = function()
+        lspconfig["ruff"].setup({
+          cmd = { "ruff", "server", "--preview" },
+          capabilities = capabilities,
         })
       end,
     })
