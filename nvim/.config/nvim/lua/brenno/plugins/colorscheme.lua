@@ -5,15 +5,23 @@ return {
   config = function()
     require("nordic").setup({
       on_palette = function(palette)
-        return palette
+        -- Processa a palette se necessário (sem retorno)
+      end,
+      after_palette = function(palette)
+        -- Função obrigatória, pode ficar vazia se não for necessária
       end,
       bold_keywords = false,
       italic_comments = true,
-      transparent_bg = true,
+      transparent = {
+        bg = true,
+        float = true,
+      },
       bright_border = false,
       reduced_blue = true,
       swap_backgrounds = false,
-      override = {},
+      on_highlight = function(highlights, palette)
+        -- Processa os destaques se necessário (deixe vazio se não precisar)
+      end,
       cursorline = {
         bold = false,
         bold_number = true,
@@ -33,6 +41,6 @@ return {
         dark_background = true,
       },
     })
-    require("nordic").load()
+    require("nordic").load({}) -- Agora passando um argumento (ex.: uma tabela vazia)
   end,
 }

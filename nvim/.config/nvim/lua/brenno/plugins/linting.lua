@@ -4,12 +4,20 @@ return {
   config = function()
     local lint = require("lint")
 
+    lint.linters.golangci_lint = {
+      cmd = "golangci-lint",
+      args = { "run", "--out-format", "line-number" },
+      stream = "stdout",
+      parser = require("lint.parser").from_errorformat("%f:%l:%c: %m", { source = "golangci_lint" }),
+    }
+
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       python = { "ruff" },
+      go = { "golangci_lint" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

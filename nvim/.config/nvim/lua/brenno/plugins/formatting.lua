@@ -21,6 +21,7 @@ return {
         lua = { "stylua" },
         python = { "black" },
         cs = { "csharpier" },
+        go = { "gofumpt", "goimports", "golines" },
       },
       format_on_save = {
         lsp_fallback = true,
